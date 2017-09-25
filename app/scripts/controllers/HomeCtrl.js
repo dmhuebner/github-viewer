@@ -18,13 +18,15 @@
       $log.error(response.header);
     };
 
-    // Controller Methods
-
     home.search = function(username) {
       $log.info("Searching for " + username);
-      github.getUser(username)
-        .then(onUserComplete, onError);
+      if (username) {
+        github.getUser(username)
+          .then(onUserComplete, onError);
+      }
     }
+
+    // Controller Methods
 
   }
 
