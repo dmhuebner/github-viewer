@@ -3,9 +3,9 @@
 
     var getUser = function(username) {
       return $http.get('https://api.github.com/users/' + username)
-          .then(function(response) {
-            return response.data;
-          });
+        .then(function(response) {
+          return response.data;
+        });
     };
 
     var getRepos = function(user) {
@@ -15,16 +15,8 @@
         });
     };
 
-    // var getGravatar = function(user) {
-    //   return $http.get(user.avatar_url)
-    //     .then(function(response) {
-    //       return response.data;
-    //     });
-    // };
-
     return {
       getUser: getUser,
-      // getGravatar: getGravatar,
       getRepos: getRepos
     }
   }

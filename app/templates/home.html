@@ -5,10 +5,10 @@
       <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
       <span><strong>Error:</strong> {{home.searchError}}.</span>
     </div>
-    <div ng-show="home.searchSuccess" class="alert alert-success fade in alert-dismissable">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
-      <span><strong>Success!</strong></span>
-    </div>
+    <!--<div ng-show="home.searchSuccess" class="alert alert-success fade in alert-dismissable">-->
+    <!--<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>-->
+    <!--<span><strong>Success!</strong></span>-->
+    <!--</div>-->
     <form class="form-inline">
       <div class="form-group">
         <label for="github-search" class="sr-only"></label>
@@ -18,5 +18,67 @@
     </form>
   </div>
 </div>
-
-<div class="row"></div>
+<br>
+<div class="row">
+  <div ng-show="home.currentUserObj" class=" col-md-8 col-md-offset-2 search-results">
+    <div class="well">
+      <div class="row">
+        <div class="gravatar col-sm-6"><img class="img-responsive" ng-src="{{home.currentUserObj.avatar_url}}"
+                                            alt="{{home.currentUserObj.login}}"></div>
+        <div class="col-sm-6">
+          <h3><span class="text-muted">Username:</span> {{home.currentUserObj.login}}</h3>
+          <p><span class="text-muted">Bio:</span> {{home.currentUserObj.bio}}</p>
+          <p><span class="text-muted">Location:</span> {{home.currentUserObj.location}}</p>
+          <p><a sref="/users/:user" href="">Public Repos:</a> {{home.currentUserObj.public_repos}}</p>
+          <p><a sref="/users/:user" href="">Followers:</a> {{home.currentUserObj.followers}}</p>
+        </div>
+        <p
+      </div>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <hr>
+          <h4 class="text-center">Public Repos:</h4>
+          <div class="text-center"><span class="text-center">Order By: </span>
+            <select ng-model="home.reposSortOrder">
+              <option selected value="name">Name</option>
+              <option value="-stargazers_count">Stars</option>
+              <option value="-updated_at">Last Updated</option>
+            </select>
+          </div>
+          <header class="row public-repos-header">
+            <div class="col-sm-4">
+              <h4>Project Name</h4>
+            </div>
+            <div class="col-sm-2">
+              <h4>Stars</h4>
+            </div>
+            <div class="col-sm-3">
+              <h4>Project Url</h4>
+            </div>
+            <div class="col-sm-3">
+              <h4>Last Updated</h4>
+            </div>
+          </header>
+          <hr class="public-repos-header-hr">
+          <section class="row public-repos-content"
+                   ng-repeat="repo in home.currentUserRepos | orderBy:home.reposSortOrder">
+            <div class="col-sm-4">
+              <span>{{repo.name}}</span>
+            </div>
+            <div class="col-sm-2">
+              <span>{{repo.stargazers_count}}</span>
+            </div>
+            <div class="col-sm-3">
+              <a href="{{repo.html_url}}" target="_blank">See Project</a>
+            </div>
+            <div class="col-sm-3">
+              <span>{{repo.updated_at | DateFilter}}</span>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!--{{home.currentUserObj}}-->
+      <!--{{home.currentUserRepos}}-->
+    </div>
+  </div>
+</div>

@@ -1,8 +1,20 @@
 body {
   background-color: #505050;
   color: #eee; }
+  body .btn-primary {
+    background-color: #b76b00; }
+    body .btn-primary:hover {
+      background-color: #854900; }
   body div.well {
     background-color: #383838;
     border: 3px solid #505050; }
+    body div.well .text-muted {
+      color: #ccc; }
+    body div.well a {
+      color: #b76b00; }
+    body div.well select {
+      color: #383838; }
+    body div.well .public-repos-header-hr {
+      margin-top: 0; }
 
 /*# sourceMappingURL=main.css.map */
