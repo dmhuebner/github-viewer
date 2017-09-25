@@ -5,10 +5,10 @@
       <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
       <span><strong>Error:</strong> {{home.searchError}}.</span>
     </div>
-    <!--<div ng-show="home.searchSuccess" class="alert alert-success fade in alert-dismissable">-->
-      <!--<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>-->
-      <!--<span><strong>Success!</strong></span>-->
-    <!--</div>-->
+    <div ng-show="home.searchSuccess" class="alert alert-success fade in alert-dismissable">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+      <span><strong>Success!</strong></span>
+    </div>
     <form class="form-inline">
       <div class="form-group">
         <label for="github-search" class="sr-only"></label>
@@ -18,11 +18,5 @@
     </form>
   </div>
 </div>
-<br>
-<div class="row">
-  <div ng-show="home.currentUserObj" class="search-results">
-    <div class="well">
-      {{home.currentUserObj}}
-    </div>
-  </div>
-</div>
+
+<div class="row"></div>
