@@ -26,11 +26,11 @@
         <div class="gravatar col-sm-6"><img class="img-responsive" ng-src="{{home.currentUserObj.avatar_url}}"
                                             alt="{{home.currentUserObj.login}}"></div>
         <div class="col-sm-6">
-          <h3><span class="text-muted">Username:</span> {{home.currentUserObj.login}}</h3>
+          <h3><span class="text-muted">Username:</span> <a ui-sref="user({username: home.currentUserObj.login})" href="">{{home.currentUserObj.login}}</a></h3>
           <p><span class="text-muted">Bio:</span> {{home.currentUserObj.bio}}</p>
           <p><span class="text-muted">Location:</span> {{home.currentUserObj.location}}</p>
-          <p><a sref="/users/:user" href="">Public Repos:</a> {{home.currentUserObj.public_repos}}</p>
-          <p><a sref="/users/:user" href="">Followers:</a> {{home.currentUserObj.followers}}</p>
+          <p><a ui-sref="user({username: home.currentUserObj.login})" href="">Public Repos:</a> {{home.currentUserObj.public_repos}}</p>
+          <p><span>Followers:</span> {{home.currentUserObj.followers}}</p>
         </div>
         <p
       </div>

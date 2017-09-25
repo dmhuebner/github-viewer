@@ -10,8 +10,13 @@
       .state('home', {
         url: '/',
         templateUrl: '/templates/home.html',
-        controller: 'HomeCtrl as home',
-      });
+        controller: 'HomeCtrl as home'
+      })
+      .state('user', {
+        url: '/users/:username',
+        templateUrl: '/templates/user.html',
+        controller: 'UserCtrl as user'
+    });
   }
 
   angular
