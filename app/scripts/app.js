@@ -12,7 +12,7 @@
         templateUrl: '/templates/home.html',
         controller: 'HomeCtrl as home'
       })
-      .state('user', {
+      .state('userState', {
         url: '/users/:username',
         templateUrl: '/templates/user.html',
         controller: 'UserCtrl as user'

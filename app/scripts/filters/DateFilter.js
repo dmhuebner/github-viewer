@@ -13,8 +13,6 @@
         return dateItem;
       };
 
-      console.log(dateFormat(month));
-
       var output = dateFormat(month) + '-' + dateFormat(day) + '-' + dateFormat(year);
 
       return output;

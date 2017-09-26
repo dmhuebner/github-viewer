@@ -10,7 +10,7 @@
 
     var onUserReposComplete = function(data) {
       home.currentUserRepos = data;
-      $log.info(data);
+      // $log.info(data);
     };
 
     var onUserComplete = function(data) {
@@ -28,6 +28,8 @@
       $log.error(response.header);
     };
 
+    // Controller Methods
+
     home.search = function(username) {
       if (username) {
         $log.info('Searching for ' + username);
@@ -37,8 +39,6 @@
         home.searchError = 'You can\'t search for nothing...';
       }
     }
-
-    // Controller Methods
 
   }
 

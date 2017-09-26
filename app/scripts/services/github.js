@@ -17,7 +17,7 @@
 
     return {
       getUser: getUser,
-      getRepos: getRepos
+      getRepos: getRepos,
     }
   }
 
