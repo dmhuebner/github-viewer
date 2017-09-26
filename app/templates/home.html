@@ -12,7 +12,7 @@
     <form class="form-inline">
       <div class="form-group">
         <label for="github-search" class="sr-only"></label>
-        <input ng-model="home.githubUsername" class="form-control" id="github-search" placeholder="Github Username">
+        <input ng-model="home.githubUsername" class="form-control" id="github-search" placeholder="Github Username" date-keys />
         <button class="btn btn-primary" ng-click="home.search(home.githubUsername)">Search</button>
       </div>
     </form>
@@ -35,38 +35,6 @@
         <p
       </div>
       <repo-list current-user-repos="home.currentUserRepos" repos-sort-order="home.reposSortOrder"></repo-list>
-      <!--<div class="row">-->
-        <!--<div class="col-sm-10 col-sm-offset-1">-->
-          <!--<hr>-->
-          <!--<h4 class="text-center">Public Repos:</h4>-->
-          <!--<div class="text-center"><span class="text-center">Order By: </span>-->
-            <!--<select ng-model="home.reposSortOrder">-->
-              <!--<option selected value="name">Name</option>-->
-              <!--<option value="-stargazers_count">Stars</option>-->
-              <!--<option value="-updated_at">Last Updated</option>-->
-            <!--</select>-->
-          <!--</div>-->
-          <!--<header class="row public-repos-header">-->
-            <!--<div class="col-sm-4">-->
-              <!--<h4>Project Name</h4>-->
-            <!--</div>-->
-            <!--<div class="col-sm-2">-->
-              <!--<h4>Stars</h4>-->
-            <!--</div>-->
-            <!--<div class="col-sm-3">-->
-              <!--<h4>Project Url</h4>-->
-            <!--</div>-->
-            <!--<div class="col-sm-3">-->
-              <!--<h4>Last Updated</h4>-->
-            <!--</div>-->
-          <!--</header>-->
-          <!--<hr class="public-repos-header-hr">-->
-          <!--<section class="row public-repos-content"-->
-                   <!--ng-repeat="repo in home.currentUserRepos | orderBy:home.reposSortOrder">-->
-            <!--<user-repos repo="repo"></user-repos>-->
-          <!--</section>-->
-        <!--</div>-->
-      <!--</div>-->
     </div>
   </div>
 </div>
