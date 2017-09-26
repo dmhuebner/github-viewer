@@ -6,6 +6,8 @@
 
     home.reposSortOrder = 'name';
 
+    home.currentGithubUserObj = github.githubUserObj;
+
     // Private Methods
 
     var onUserReposComplete = function(data) {
@@ -14,7 +16,8 @@
     };
 
     var onUserComplete = function(data) {
-      home.currentUserObj = data;
+      // github.setCurrentUser(data);
+      home.currentUserObj = github.getCurrentUser();
       home.searchError = null;
       home.searchSuccess = true;
 
