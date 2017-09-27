@@ -1,5 +1,5 @@
 (function() {
-  function github($http) {
+  function github($http, $q) {
 
     var github = {
       githubUserObj: null,
@@ -23,10 +23,12 @@
     };
 
     var getUser = function(username) {
+      var deferred = $q.defer();
       return $http.get('https://api.github.com/users/' + username)
         .then(function(response) {
           setCurrentGithubUserObj(response.data);
-          return response.data;
+          deferred.resolve(response.data);
+          return deferred.promise;
         });
     };
 
@@ -48,5 +50,5 @@
 
   angular
     .module('githubViewer')
-    .factory('github', ['$http', github]);
+    .factory('github', ['$http', '$q', github]);
 })();

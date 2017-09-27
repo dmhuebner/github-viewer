@@ -2,7 +2,9 @@
   <div>User template</div>
   {{user.username}}
   <br>
-  {{user.result}}
+  {{user.currentUser}}
+  <br>
+  <!--{{user.result}}-->
 </div>
 <div class="row">
   <repo-list current-user-repos="user.currentUserRepos" repos-sort-order="user.reposSortOrder"></repo-list>
