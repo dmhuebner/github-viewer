@@ -4,7 +4,6 @@
       restrict: 'E',
       templateUrl: 'templates/directives/repoList.html',
       controller: 'HomeCtrl',
-      transclude: true,
       scope: {
         currentUserRepos: '=',
         reposSortOrder: '='

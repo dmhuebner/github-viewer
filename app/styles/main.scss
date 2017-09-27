@@ -2,11 +2,34 @@ body {
   background-color: #505050;
   color: #eee;
 
-  .btn-primary {
+  .text-muted {
+    color: #ccc;
+  }
+
+  a {
+    color: #b76b00;
+
+    &:hover {
+      color: #7c4100;
+    }
+  }
+
+  select {
+    color: #383838;
+  }
+
+  .btn.btn-primary {
     background-color: #b76b00;
+    border: 1px solid #854900;
 
     &:hover {
       background-color: #854900;
+    }
+
+    &:active, &:focus {
+      background-color: #6d3600;
+      border: 1px solid #854900;
+      outline: 5px auto #b76b00;
     }
   }
 
@@ -14,17 +37,6 @@ body {
     background-color: #383838;
     border: 3px solid #505050;
 
-    .text-muted {
-      color: #ccc;
-    }
-
-    a {
-      color: #b76b00;
-    }
-
-    select {
-      color: #383838;
-    }
 
     .public-repos-header-hr {
       margin-top: 0;
