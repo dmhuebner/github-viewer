@@ -15,9 +15,10 @@
       // $log.info(data);
     };
 
+    // throw 'Simulated error';
+    // github.setCurrentUser(data);
     var onUserComplete = function(data) {
-      // github.setCurrentUser(data);
-      home.currentUserObj = github.getCurrentUser();
+      home.currentUserObj = data;
       home.searchError = null;
       home.searchSuccess = true;
 
@@ -28,7 +29,7 @@
     var onError = function(response) {
       home.searchError = 'There was an error processing your request. Please try again.';
       home.searchSuccess = false;
-      $log.error(response.header);
+      $log.error(response);
     };
 
     // Controller Methods
@@ -37,7 +38,8 @@
       if (username) {
         $log.info('Searching for ' + username);
         github.getUser(username)
-          .then(onUserComplete, onError);
+          .then(onUserComplete)
+          .catch(onError);
       } else {
         home.searchError = 'You can\'t search for nothing...';
       }
